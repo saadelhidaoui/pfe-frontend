@@ -23,9 +23,15 @@ import {MissionsComponent} from '../../missions/missions.component';
 import {ProjetsComponent} from '../../projets/projets.component';
 import {ReclamationsComponent} from '../../reclamations/reclamations.component';
 import {ContactsComponent} from '../../contacts/contacts.component';
-import {PagePrincipaleComponent} from '../../page-principale/page-principale.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import {FileUploadModule} from 'primeng/fileupload';
+import {CalendarModule} from 'primeng/calendar';
+import {CheckboxModule} from 'primeng/checkbox';
+import {DialogModule} from 'primeng/dialog';
+import {FullCalendarModule} from '@fullcalendar/angular';
+import {MatCardModule} from '@angular/material/card';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
     imports: [
@@ -42,6 +48,13 @@ import {MatTableModule} from '@angular/material/table';
         MatIconModule,
         MatPaginatorModule,
         MatTableModule,
+        FullCalendarModule,
+        FileUploadModule,
+        CalendarModule,
+        CheckboxModule,
+        DialogModule,
+        MatCardModule,
+        DragDropModule,
     ],
   declarations: [
     DashboardComponent,

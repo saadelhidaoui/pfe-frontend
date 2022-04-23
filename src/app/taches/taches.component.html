@@ -1,72 +1,67 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="container">
-                <div class="card">
-                    <div class="card-header card-header-tabs card-header-warning">
-                        <div class="nav-tabs-navigation">
-                            <div class="nav-tabs-wrapper">
-                                <div class="justify-content-end">
-                                    <button mat-raised-button color="primary" >Ajouter un tâche</button>
-                                    <button mat-raised-button color="primary" class="ml-4">Exporter</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="profile">
-                                <table class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" value="" checked>
-                                                    <span class="form-check-sign">
-                                                          <span class="check"></span>
-                                                      </span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>LoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</td>
-                                        <td class="td-actions text-right">
-                                            <button mat-raised-button type="button" matTooltip="Edit Task" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">edit</i>
-                                            </button>
-                                            <button mat-raised-button type="button" matTooltip="Remove"  class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">close</i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" value="" checked>
-                                                    <span class="form-check-sign">
-                                                          <span class="check"></span>
-                                                      </span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>LoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</td>
-                                        <td class="td-actions text-right">
-                                            <button mat-raised-button type="button" matTooltip="Edit Task"  class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">edit</i>
-                                            </button>
-                                            <button mat-raised-button type="button" matTooltip="Remove"  class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">close</i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <div class="col-md-3" style="background-color: #303030; height: 93vh;">
+                    <div>
+                        <mat-card class="mt-4">
+                            <form action="" class="mt-4" [formGroup]="todoForm">
+                                <h4>Ajouter une tâche</h4>
+                                <mat-form-field  appearance="outline">
+                                    <mat-label>Tâche</mat-label>
+                                    <input formControlName="task" matInput placeholder="Ajouter une tâche">
+                                    <mat-icon matSuffix>task</mat-icon>
+                                    <mat-hint>Ajouter une tâche</mat-hint>
+                                </mat-form-field>
+                                <button (click)="addTask()" mat-raised-button color="primary" [disabled]="todoForm.invalid" class="mt-3">Ajouter</button>
+                            </form>
+                        </mat-card>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-9">
+                   <div cdkDropListGroup>
+                       <div class="row">
+                           <div class="col-md-4">
+                               <div class="example-container">
+                                   <h4>Tâches à faire</h4>
+                                   <div cdkDropList [cdkDropListData]="task" class="example-list" (cdkDropListDropped)="drop($event)" >
+                                       <div class="example-box" *ngFor="let item of task; let i = index" cdkDrag>{{item.desc}}
+                                            <div class="box">
+                                                <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
+                                                <button mat-icon-button color="primary" (click)="onEdit(item,i)"><mat-icon>edit</mat-icon></button>
+                                            </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-md-4">
+                               <div class="example-container">
+                                   <h4>Tâches en progress</h4>
+                                   <div cdkDropList  [cdkDropListData]="inprogress"  class="example-list" (cdkDropListDropped)="drop($event)">
+                                       <div class="example-box" *ngFor="let item of inprogress; let i = index" cdkDrag>{{item.desc}}
+                                           <div class="box">
+                                               <button mat-icon-button color="warn" (click)="deleteInProgress(i)"><mat-icon>delete</mat-icon></button>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-md-4">
+                               <div class="example-container">
+                                   <h4>Tâches terminées</h4>
+                                   <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+                                       <div class="example-box" *ngFor="let item of done; let i = index" cdkDrag>{{item.desc}}
+                                           <div class="box">
+                                               <button mat-icon-button color="warn" (click)="deleteDone(i)"><mat-icon>delete</mat-icon></button>
+                                               <button mat-icon-button style="color: #0fc752"><mat-icon>check</mat-icon></button>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                </div>
         </div>
     </div>
 </div>
+

@@ -2,18 +2,11 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="card card-plain">
-            <div class="card-header card-header-danger">
+           <div class="card-header card-header-danger">
                 <button mat-raised-button color="primary" >Ajouter</button>
-                <button mat-raised-button color="primary" class="ml-4">Exporter</button>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card-body">
-
-
-                    </div>
-                </div>
-            </div>
+           </div>
+            <full-calendar deepChangeDetection="true" [options]="calendarOptions" class="mt-4" style="background-color: whitesmoke"></full-calendar>
         </div>
     </div>
 </div>
+

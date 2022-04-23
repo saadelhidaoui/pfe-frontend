@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
 
 
 @Component({
@@ -7,5 +8,6 @@ import { Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
 
 }

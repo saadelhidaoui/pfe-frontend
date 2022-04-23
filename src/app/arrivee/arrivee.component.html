@@ -5,25 +5,27 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <button mat-raised-button color="primary" >Ajouter</button>
-                        <button mat-raised-button color="primary" class="ml-4">Exporter</button>
+                        <button mat-raised-button color="primary" class="ml-4" >Exporter</button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th>ID</th>
-                                <th>Nom & Prénom</th>
+                                <th>Nom</th>
                                 <th>Cin</th>
-                                <th>num D'arrivé</th>
-                                <th>Date D'arrivé</th>
+                                <th>numArr</th>
+                                <th>DateArr</th>
                                 <th>Type</th>
                                 <th>Etat</th>
                                 <th>ChargeCas</th>
-                                <th>Importance</th>
+                                <th>Impor</th>
                                 <th>Reçu</th>
                                 <th>Notes</th>
                                 <th>Résultat</th>
                                 <th>Modérateur</th>
+                                <th>Action</th>
+
                                 </thead>
                                 <tbody>
                                 <tr>
@@ -40,6 +42,14 @@
                                     <td></td>
                                     <td></td>
                                     <td>Ilham</td>
+                                    <td>
+                                        <button mat-icon-button color="primary">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                        <button mat-icon-button color="warn">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
