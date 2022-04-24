@@ -12,7 +12,8 @@
                                     <mat-icon matSuffix>task</mat-icon>
                                     <mat-hint>Ajouter une tâche</mat-hint>
                                 </mat-form-field>
-                                <button (click)="addTask()" mat-raised-button color="primary" [disabled]="todoForm.invalid" class="mt-3">Ajouter</button>
+                                <button *ngIf="!isEditEnabled" (click)="addTask()" mat-raised-button color="primary" [disabled]="todoForm.invalid" class="mt-3">Ajouter</button>
+                                <button *ngIf="isEditEnabled" (click)="updateTask()" mat-raised-button color="primary" [disabled]="todoForm.invalid" class="mt-3">Modifier</button>
                             </form>
                         </mat-card>
                     </div>
