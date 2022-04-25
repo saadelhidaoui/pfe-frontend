@@ -16,7 +16,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/task', title: 'Tâches',  icon: 'task', class: '' },
     { path: '/adherents', title: 'adherents',  icon: 'person', class: '' },
     { path: '/missions', title: 'Missions',  icon: 'work', class: '' },
-    { path: '/projets', title: 'Projets',  icon: 'tab', class: '' },
+    { path: '/projets', title: 'Projets',  icon: 'domain', class: '' },
 
     { path: '/user-profile', title: 'Profil',  icon: 'person', class: 'active-pro' },
 ];
