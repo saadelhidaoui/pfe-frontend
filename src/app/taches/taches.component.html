@@ -36,7 +36,7 @@
                            </div>
                            <div class="col-md-4">
                                <div class="example-container">
-                                   <h4>Tâches en progress</h4>
+                                   <h4>Tâches en cours</h4>
                                    <div cdkDropList  [cdkDropListData]="inprogress"  class="example-list" (cdkDropListDropped)="drop($event)">
                                        <div class="example-box" *ngFor="let item of inprogress; let i = index" cdkDrag>{{item.desc}}
                                            <div class="box">
