@@ -32,6 +32,7 @@ import {DialogModule} from 'primeng/dialog';
 import {FullCalendarModule} from '@fullcalendar/angular';
 import {MatCardModule} from '@angular/material/card';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
     imports: [
@@ -55,6 +56,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         DialogModule,
         MatCardModule,
         DragDropModule,
+        MatButtonToggleModule,
     ],
   declarations: [
     DashboardComponent,

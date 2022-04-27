@@ -8,14 +8,109 @@
                         <button mat-raised-button color="primary" class="ml-4">Exporter</button>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                </thead>
-                                <tbody>
-                                <tr></tr>
-                                </tbody>
+                        <mat-form-field appearance="standard">
+                            <mat-label>Filter</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. produit" #input>
+                        </mat-form-field>
+
+                        <div class="mat-elevation-z8">
+                            <table mat-table [dataSource]="dataSource" matSort>
+
+                                <!-- ID Column -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="cin">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CIN</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.cin}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Nom">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Nom}} </td>
+                                </ng-container>
+
+                                <!-- nom Column -->
+                                <ng-container matColumnDef="PPR">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PPR</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.PPR}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="DateArrivee">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> DateArrivee</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.DateArrivee}}</td>
+                                </ng-container>
+
+                                <!-- date Column -->
+                                <ng-container matColumnDef="ville">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ville</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.ville}} </td>
+                                </ng-container>
+
+                                <!-- qte Column -->
+                                <ng-container matColumnDef="type">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="Etat">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Etat</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Etat}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="ChargeCas">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ChargeCas</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.ChargeCas}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Importance">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Importance</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Importance}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Reception">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Reception</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Reception}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Notes">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Notes</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Notes}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Resultat">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Résultat</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Resultat}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Moderateur">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Modérateur</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Moderateur}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="action">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <button mat-icon-button (click)="editDepart(row)" color="primary">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                        <button mat-icon-button (click)="deleteDepart(row.id)" color="warn">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                                <!-- Row shown when there is no matching data. -->
+                                <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                                </tr>
                             </table>
+
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"
+                                           aria-label="Select page of users"></mat-paginator>
                         </div>
                     </div>
                 </div>

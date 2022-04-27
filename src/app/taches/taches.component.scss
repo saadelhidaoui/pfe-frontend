@@ -59,3 +59,12 @@
   grid-auto-flow: column;
   grid-column-gap: 10px;
 }
+.head-title{
+  border-radius: 4px;
+  color: #777272;
+  font-size: 1.5rem;
+  font-weight: 600;
+  span{
+    font-weight: normal;
+  }
+}

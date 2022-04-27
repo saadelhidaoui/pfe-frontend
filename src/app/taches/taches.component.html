@@ -23,7 +23,7 @@
                        <div class="row">
                            <div class="col-md-4">
                                <div class="example-container">
-                                   <h4>Tâches à faire</h4>
+                                   <h4 class="head-title">A faire <span *ngIf="task.length > 0">{{task.length}}</span></h4>
                                    <div cdkDropList [cdkDropListData]="task" class="example-list" (cdkDropListDropped)="drop($event)" >
                                        <div class="example-box" *ngFor="let item of task; let i = index" cdkDrag>{{item.desc}}
                                             <div class="box">
@@ -36,7 +36,7 @@
                            </div>
                            <div class="col-md-4">
                                <div class="example-container">
-                                   <h4>Tâches en cours</h4>
+                                   <h4 class="head-title">En cours <span *ngIf="inprogress.length > 0">{{inprogress.length}}</span></h4>
                                    <div cdkDropList  [cdkDropListData]="inprogress"  class="example-list" (cdkDropListDropped)="drop($event)">
                                        <div class="example-box" *ngFor="let item of inprogress; let i = index" cdkDrag>{{item.desc}}
                                            <div class="box">
@@ -48,12 +48,12 @@
                            </div>
                            <div class="col-md-4">
                                <div class="example-container">
-                                   <h4>Tâches terminées</h4>
+                                   <h4 class="head-title">Terminées <span *ngIf="done.length > 0">{{done.length}}</span></h4>
                                    <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
                                        <div class="example-box" *ngFor="let item of done; let i = index" cdkDrag>{{item.desc}}
                                            <div class="box">
                                                <button mat-icon-button color="warn" (click)="deleteDone(i)"><mat-icon>delete</mat-icon></button>
-                                               <button mat-icon-button style="color: #0fc752"><mat-icon>check</mat-icon></button>
+                                               <button mat-icon-button style="color: #0fc752"><mat-icon>check_circle</mat-icon></button>
                                            </div>
                                        </div>
                                    </div>

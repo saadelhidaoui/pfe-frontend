@@ -9,30 +9,295 @@
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                <th>Aff</th>
-                                <th>Qualite</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>NomAr</th>
-                                <th>PrenomAr</th>
-                                <th>CIN</th>
-                                <th>PPR</th>
-                                <th>Naissance</th>
-                                <th>DAteNaissance</th>
-                                <th>Photo</th>
-                                <th>CIN-Conj</th>
-                                <th>VERSOCARTE</th>
-                                <th>AFF1</th>
-                                <th>AFF2</th>
-                                <th>NVAL</th>
-                                </thead>
-                                <tbody>
+                        <!--<mat-form-field appearance="standard">
+                            <mat-label>Filter</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. produit" #input>
+                        </mat-form-field>
 
-                                </tbody>
+                        <div class="mat-elevation-z8">
+                            <table mat-table [dataSource]="dataSource" matSort>
+
+                                <ng-container matColumnDef="Aff"  sticky>
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Aff</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Aff}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Qualite" sticky>
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Qualite</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Qualite}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Nom" sticky>
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Nom}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Prenom" sticky>
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Prenom</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Prenom}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="NomPrenomAr">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom&PrenomAr</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.NomPrenomAr}}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NomAr">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> NomAr</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.NomAr}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PrenomAr">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PrenomAr</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.PrenomAr}} </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="CINN">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CINN</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.CINN}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CIN">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CIN</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.CIN}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PPRR">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PPRR</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.PPRR}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PPR">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PPR</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.PPR}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Naissance">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Naissance</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Naissance}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="DateNaissance">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> DateNaissance</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.DateNaissance}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Photo">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Photo</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.Photo}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINNConj">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CINNConj</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.CINNConj}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINConj">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CINConj</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.CINConj}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NomAdherent">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> NomAdherent</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.NomAdherent}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PrenomAdherent">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PrenomAdherent</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.PrenomAdherent}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINNAdhe">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CINNAdhe</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.CINNAdhe}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINAdhe">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CINAdhe</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.CINAdhe}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PprrAdhe">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PprrAdhe</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.PprrAdhe}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PprAdhe">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PprAdhe</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.PprAdhe}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="VersoCarte">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> VersoCarte</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.VersoCarte}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="AFF1">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> AFF1</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.AFF1}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="AFF2">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> AFF2</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.AFF2}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NVAL">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> NVAL</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.NVAL}} </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                                <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                                </tr>
                             </table>
+
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"
+                                           aria-label="Select page of users"></mat-paginator>
+                        </div>-->
+                        <mat-form-field appearance="standard">
+                            <mat-label>Filter</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. E124578" #input>
+                        </mat-form-field>
+                        <div>
+                            <mat-button-toggle-group multiple [value]="['header-1']"
+                                                     #stickyHeaders="matButtonToggleGroup"
+                                                     class="example-sticky-toggle-group">
+                                <mat-button-toggle value="header-1"> Ligne 1 </mat-button-toggle>
+                            </mat-button-toggle-group>
+                        </div>
+
+
+                        <div>
+                            <mat-button-toggle-group multiple [value]="['Aff']"
+                                                     #stickyColumns="matButtonToggleGroup"
+                                                     class="example-sticky-toggle-group">
+                                <mat-button-toggle value="Aff"> Aff </mat-button-toggle>
+                                <mat-button-toggle value="Qualite"> Qualite </mat-button-toggle>
+                                <mat-button-toggle value="Nom"> Nom </mat-button-toggle>
+                                <mat-button-toggle value="Prenom"> Prenom </mat-button-toggle>
+                            </mat-button-toggle-group>
+                        </div>
+
+                        <div class="example-container mat-elevation-z8">
+                            <mat-table [dataSource]="dataSource" *ngFor="let table of tables">
+                                <ng-container matColumnDef="Aff" [sticky]="isSticky(stickyColumns, 'Aff')">
+                                    <mat-header-cell *matHeaderCellDef> Aff </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Qualite" [sticky]="isSticky(stickyColumns, 'Qualite')">
+                                    <mat-header-cell *matHeaderCellDef> Qualité </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Nom" [sticky]="isSticky(stickyColumns, 'Nom')">
+                                    <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Prenom" [sticky]="isSticky(stickyColumns, 'Prenom')">
+                                    <mat-header-cell *matHeaderCellDef> Pernom </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NomPrenomAr">
+                                    <mat-header-cell *matHeaderCellDef> NomPreAr </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NomAr" >
+                                    <mat-header-cell *matHeaderCellDef> NomAr </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PrenomAr">
+                                    <mat-header-cell *matHeaderCellDef> PrenomAr </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINN">
+                                    <mat-header-cell *matHeaderCellDef> CINN </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CIN">
+                                    <mat-header-cell *matHeaderCellDef> CIN </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PPRR">
+                                    <mat-header-cell *matHeaderCellDef> PPRR </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PPR">
+                                    <mat-header-cell *matHeaderCellDef> PPR </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Naissance">
+                                    <mat-header-cell *matHeaderCellDef> Naissance </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="DateNaissance">
+                                    <mat-header-cell *matHeaderCellDef> DateNaiss </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Photo">
+                                    <mat-header-cell *matHeaderCellDef> Photo </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINNConj">
+                                    <mat-header-cell *matHeaderCellDef> CINNConj </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINConj">
+                                    <mat-header-cell *matHeaderCellDef> CINConj </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINConj">
+                                    <mat-header-cell *matHeaderCellDef> CINConj </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NomAdherent">
+                                    <mat-header-cell *matHeaderCellDef> NomAdherent </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PrenomAdherent">
+                                    <mat-header-cell *matHeaderCellDef> PreAdherent </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINNAdhe">
+                                    <mat-header-cell *matHeaderCellDef> CINNAdhe </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINAdhe">
+                                    <mat-header-cell *matHeaderCellDef> CINAdhe </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PprrAdhe">
+                                    <mat-header-cell *matHeaderCellDef> PprrAdhe </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="PprAdhe">
+                                    <mat-header-cell *matHeaderCellDef> PprAdhe </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="CINAdhe">
+                                    <mat-header-cell *matHeaderCellDef> CINAdhe </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="VersoCarte">
+                                    <mat-header-cell *matHeaderCellDef> VersoCarte </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="AFF1">
+                                    <mat-header-cell *matHeaderCellDef> AFF1 </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="AFF2">
+                                    <mat-header-cell *matHeaderCellDef> AFF2 </mat-header-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NVAL">
+                                    <mat-header-cell *matHeaderCellDef> NVAL </mat-header-cell>
+                                </ng-container>
+
+                                <mat-header-row *matHeaderRowDef="displayedColumns; sticky: isSticky(stickyHeaders, 'header-1')"></mat-header-row>
+
+                                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                            </mat-table>
                         </div>
                     </div>
                 </div>

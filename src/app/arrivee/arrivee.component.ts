@@ -10,20 +10,35 @@ import {MessageService} from 'primeng/api';
   styleUrls: ['./arrivee.component.scss']
 })
 export class ArriveeComponent implements OnInit {
-  /**
-   * displayedColumns: string[] = ['id', 'CIN', 'Nom & Prénom', 'PPR', 'DateArrivée', 'ville', 'type', 'Etat', 'ChargeCas', 'Importance', 'Reception', 'Notes', 'Résultat', 'Modérateur'];
-   * dataSource!: MatTableDataSource<any>;
-   */
-
+  displayedColumns: string[] = ['id', 'cin', 'Nom', 'PPR', 'DateArrivee', 'ville', 'type', 'Etat', 'ChargeCas', 'Importance', 'Reception', 'Notes', 'Resultat', 'Moderateur'];
+  dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 
   constructor() {}
 
 
 
   ngOnInit(): void {
+  }
+
+  editArrivee(row: any) {
+  }
+
+  deleteArrivee(id: number) {
   }
 }
 
