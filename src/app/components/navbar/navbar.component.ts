@@ -86,7 +86,7 @@ export class NavbarComponent implements OnInit {
 
             if (body.querySelectorAll('.main-panel')) {
                 document.getElementsByClassName('main-panel')[0].appendChild($layer);
-            }else if (body.classList.contains('off-canvas-sidebar')) {
+            } else if (body.classList.contains('off-canvas-sidebar')) {
                 document.getElementsByClassName('wrapper-full-page')[0].appendChild($layer);
             }
 
@@ -94,7 +94,7 @@ export class NavbarComponent implements OnInit {
                 $layer.classList.add('visible');
             }, 100);
 
-            $layer.onclick = function() { //asign a function
+            $layer.onclick = function() {
               body.classList.remove('nav-open');
               this.mobile_menu_visible = 0;
               $layer.classList.remove('visible');
@@ -110,13 +110,13 @@ export class NavbarComponent implements OnInit {
         }
     };
 
-    getTitle(){
+    getTitle() {
       var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
+      if (titlee.charAt(0) === '#') {
           titlee = titlee.slice( 1 );
       }
 
-      for(var item = 0; item < this.listTitles.length; item++){
+      for( var item = 0; item < this.listTitles.length; item++) {
           if(this.listTitles[item].path === titlee){
               return this.listTitles[item].title;
           }
