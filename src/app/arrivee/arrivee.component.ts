@@ -10,7 +10,7 @@ import {MessageService} from 'primeng/api';
   styleUrls: ['./arrivee.component.scss']
 })
 export class ArriveeComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'cin', 'Nom', 'PPR', 'DateArrivee', 'ville', 'type', 'Etat', 'ChargeCas', 'Importance', 'Reception', 'Notes', 'Resultat', 'Moderateur'];
+  displayedColumns: string[] = ['aff', 'cin', 'Nom', 'PPR', 'DateArrivee', 'ville', 'type', 'Etat', 'ChargeCas', 'Importance', 'Reception', 'Notes', 'Resultat', 'Moderateur'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

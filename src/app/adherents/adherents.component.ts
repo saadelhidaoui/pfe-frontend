@@ -10,7 +10,7 @@ import {MatSort} from '@angular/material/sort';
 })
 export class AdherentsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'num', 'ppr', 'nom', 'cin', 'email', 'telephone', 'dateNaissance', 'qualite', 'adresse', 'action'];
+  displayedColumns: string[] = ['aff', 'num', 'ppr', 'nom', 'cin', 'email', 'telephone', 'dateNaissance', 'qualite', 'adresse', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

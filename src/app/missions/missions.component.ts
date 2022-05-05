@@ -10,7 +10,7 @@ import {MatSort} from '@angular/material/sort';
 })
 export class MissionsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'ref', 'debut', 'fin', 'ville', 'pv', 'action'];
+  displayedColumns: string[] = ['ref', 'debut', 'fin', 'ville', 'pv', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

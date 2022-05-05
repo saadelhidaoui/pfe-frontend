@@ -9,7 +9,7 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./depart.component.scss']
 })
 export class DepartComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'cin', 'Nom', 'PPR', 'DateArrivee', 'ville', 'type', 'Etat', 'ChargeCas', 'Importance', 'Reception', 'Notes', 'Resultat', 'Moderateur'];
+  displayedColumns: string[] = ['aff', 'cin', 'Nom', 'PPR', 'DateArrivee', 'ville', 'type', 'Etat', 'ChargeCas', 'Importance', 'Reception', 'Notes', 'Resultat', 'Moderateur'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

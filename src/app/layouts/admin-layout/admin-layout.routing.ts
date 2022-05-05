@@ -16,8 +16,8 @@ import {ListePrincipaleComponent} from '../../liste-principale/liste-principale.
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'liste-arrivee',     component: ArriveeComponent },
-    { path: 'liste-depart',     component: DepartComponent },
+    { path: 'liste-depart',     component: ArriveeComponent },
+    { path: 'liste-traite',     component: DepartComponent },
     { path: 'rendez-vous',          component: RendezVousComponent },
     { path: 'task',           component: TachesComponent },
     { path: 'adherents',  component: AdherentsComponent },
